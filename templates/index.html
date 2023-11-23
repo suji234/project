@@ -1,0 +1,141 @@
+{% load static %}
+<html>
+<head>
+
+    <title>
+        {% block 'title' %}
+        Main
+        {% endblock %}
+    </title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<style>
+
+ {% block 'style' %}
+
+* {
+   box-sizing: border-box;
+}
+.imageColumn {
+   float: left;
+   width: 25%;
+   padding: 10px;
+}
+
+       nav{
+       display:flex;
+       align-items:center;
+       justify-content:space-between;
+       padding-top:40px;
+       padding-left:10px;
+       padding-right:10px;
+       }
+
+          .back-video{
+            position: fixed;
+            right:0;
+            bottom:0;
+            z-index: -1;
+            background-size: auto;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        .logo{
+        color:white;
+        font-size:28px;
+        }
+        span{
+        color:#ea1538
+        }
+         nav ul li{
+        list-style-type:none;
+        display: inline-block;
+        padding: 10px 20px;
+        }
+        nav ul li a:hover{
+        color: #ea1538;
+        transition: .3s;
+        }
+        nav ul li a{
+        color:white;
+        text-decoration:none;
+        font-weight: bold;
+        }
+
+        .matter{
+            color:white;
+        }
+        container mt-5{
+        color:white;
+        }
+
+        {% endblock %}
+
+    </style>
+
+
+
+</head>
+<body>
+
+
+
+
+<br>
+
+ <header>
+        <nav>
+             <h1 align=center><font color="white">COVID 19 </font> <span>TRACKER</span></h1>
+
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'apsregistration' %}">Registration</a></li>
+                <li><a href="{% url 'apslogin' %}">Login</a></li>
+                <li><a href="{% url 'payment' %}">Payment</a></li>
+                <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+
+<br>
+
+{% block 'body' %}
+
+<div class="myDiv">
+
+
+    <p style="text-align:left">
+        <img src="{% static 'images/a.jpg' %}" alt="img4" style="width:40%">
+    </p>
+
+
+    <p style="text-align:left">
+    <div class="matter">
+       This is a general overview and status of places affected by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), the virus which causes coronavirus disease 2019 (COVID-19) and is responsible for the COVID-19 pandemic. The first human cases of COVID-19 were identified in Wuhan, the capital of the province of Hubei in China in December 2019.
+
+The figures presented are based on reported cases and deaths. While in several high-income countries the ratio of total estimated cases and deaths to reported cases and deaths is low and close to 1, for some countries it may be more than 10 or even more than 100. Implementation of COVID-19 surveillance methods varies widely.
+
+Maps and time
+    </div>
+
+    </p>
+
+
+</div>
+
+
+{% endblock %}
+ <div>
+        <video autoplay loop muted plays-inline class="back-video">
+            <source  src="{% static 'images/video.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+
+
+</body>
+</html>
